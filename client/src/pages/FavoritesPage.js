@@ -20,9 +20,9 @@ class FavoritesPage extends React.Component {
     console.log("QUERYING")
     API.loadFavorites()
     .then( (res) => {
-      console.log(res)
+      console.log(res.data)
       this.setState({
-        articles: res
+        articles: res.data
       })
     })
     .catch(err => console.log(err));

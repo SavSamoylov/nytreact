@@ -4,7 +4,7 @@ const bodyParser = require('body-parser');
 const mongojs = require("mongojs");
 const app = xps.app();
 
-let PORT = process.env.PORT || 3000;
+let PORT = process.env.PORT || 3001;
 
 
 xps.go(app,
