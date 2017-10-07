@@ -1,0 +1,27 @@
+{
+  "name": "nytreact",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SavSamoylov/nytreact.git"
+  },
+  "author": "Saveliy Samoylov",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "express": "^4.15.4",
+    "mongojs": "^2.4.1",
+    "mongoose": "^4.12.0",
+    "morgan": "^1.8.2"
+  },
+  "bugs": {
+    "url": "https://github.com/SavSamoylov/CL/issues"
+  },
+  "homepage": "https://github.com/SavSamoylov/CL#readme"
+}
