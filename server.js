@@ -65,7 +65,19 @@ app.post("/api/save", (req,res)=>{
 
 
 // Delete Favorites
-app.delete("/api/save", (req,res)=>{
+app.post("/api/delete", (req,res)=>{
+
+  console.log(req.body)
+
+  db.articles.remove({"_id": req.body.id}, function(err, docs) {
+
+    if (err) throw err;
+
+    console.log('article deleted');
+
+    res.json("deleted");
+
+  });
 
 })
 

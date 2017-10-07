@@ -1,7 +1,26 @@
 import React from "react";
-import "./Card.css"
+import API from "../api/api";
+import "./Card.css";
 
 class FavoritesCard extends React.Component {
+
+  handleDelete = (e) => {
+
+    const articleId = e.target.getAttribute("data-id");
+
+    const articleObj = {
+      id: articleId,
+    };
+
+
+    API.deleteFavorites(articleObj)
+      .then( (res) => {
+        console.log(res)
+        document.getElementById(articleId).remove();
+      })
+      .catch(err => console.log(err));
+  }
+
   render() {
     return (
       <div className="card">
@@ -15,12 +34,13 @@ class FavoritesCard extends React.Component {
                     <span className="badge badge-dark">{index + 1}</span>
                     <h4 className="card-title"><a href={article.url} target="_blank" className="card-link">{article.title}</a></h4>
                     <h6 className="card-subtitle mb-2 text-muted">{article.date}</h6>
+                    <a href="#/" onClick={this.handleDelete} data-id={article._id} className="btn btn-danger btn-sm">Delete Favorites</a>
                   </div>
                 </div>
               ))}
             </div>
           ) : (
-            <p>No Favorites to Display</p>
+            <p>No Results to Display</p>
           )}
         </div>
       </div>

@@ -24,5 +24,9 @@ export default{
 
     return axios.get("/api/save")
 
+  },
+
+  deleteFavorites: (articleId) => {
+    return axios.post("/api/delete", articleId)
   }
 }
